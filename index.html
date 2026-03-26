@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus AI | Intelligent Video Connectivity</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --accent: #a855f7;
+            --bg-dark: #020617;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            overflow: hidden;
+            color: white;
+        }
+
+        .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(168,85,247,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(2,6,23,1) 0%, rgba(2,6,23,1) 100%);
+        }
+
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .glass-card {
+            background: rgba(15,23,42,0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(99,102,241,0.5);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <!-- Background -->
+    <div class="bg-mesh"></div>
+    <div id="particles-container"></div>
+
+    <div class="w-full max-w-5xl flex flex-col md:flex-row glass-card rounded-3xl overflow-hidden">
+
+        <!-- Left Section -->
+        <div class="hidden md:flex md:w-1/2 p-12 flex-col justify-between bg-slate-900/40">
+
+            <div>
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold">AI</span>
+                    </div>
+                    <span class="text-2xl font-bold font-heading">
+                        Nexus<span class="text-indigo-400">AI</span>
+                    </span>
+                </div>
+
+                <h1 class="text-4xl font-extrabold font-heading leading-tight mb-4">
+                    The future of <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                        human connection
+                    </span>
+                </h1>
+
+                <p class="text-slate-400 text-lg max-w-xs leading-relaxed">
+                    Real-time AI translation, noise cancellation,
+                    and lighting enhancement for every call.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Login Section -->
+        <div class="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+
+            <div class="mb-10 text-center md:text-left">
+                <h2 class="text-3xl font-bold font-heading mb-2">
+                    Welcome Back
+                </h2>
+
+                <p class="text-slate-400">
+                    Join 2,000+ companies scaling with AI video.
+                </p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                        Email Address
+                    </label>
+
+                    <input type="email"
+                           placeholder="name@company.com"
+                           class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white"
+                           required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                        Password
+                    </label>
+
+                    <input type="password"
+                           placeholder="••••••••"
+                           class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white"
+                           required>
+                </div>
+
+                <button type="submit"
+                        class="w-full btn-primary py-3 rounded-xl font-semibold text-white">
+                    Sign In
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
